@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, I'm Seth</title>
+    <link rel="stylesheet" type="text/css" href="assets/master.css">
+  </head>
+  <body>
+
+    <main class='container'>
+      <header class='header'>
+        <h1 id='hello' class='invisible'>Hello, </h1>
+        <h1 id='im' class='invisible'>I'm </h1>
+        <h1 id='seth' class='invisible'>Seth </h1>
+      </header>
+
+        <ul class='boxes group'>
+          <li class='invisible'><h1>About</h1>
+            <article class="about-me">
+              Hello! I am a software engineer with experience in JavaScript,
+              Ruby, HTML/CSS, object-oriented programming and RESTful
+              architectures. I studied web development at New York
+              University before attending App Academy and am now looking to
+              continue developing my skills and to contribute to an engineering
+              team in NYC.
+              I have a background in art and performance, as well, and
+              in my spare time I enjoy working on my art practice and
+              also arguing about sports.
+            </article>
+          </li>
+          <li class='invisible'><h1>Projects</h1>
+            <article class="">
+            </article>
+          </li>
+        </ul>
+
+        <ul class='boxes group'>
+          <li class='invisible'><h1>Resume</h1>
+            <article class="">
+            </article>
+          </li>
+          <li class='links invisible'>Links</li>
+        </ul>
+
+    </main>
+
+    <script src="./assets/jquery-2.1.1.js"></script>
+    <script charset="utf-8">
+
+      ($(document).ready(function () {
+          $('#hello').removeClass();
+        setTimeout(function () {
+          $('#im').removeClass();
+        },750);
+        setTimeout(function () {
+          $('#seth').removeClass();
+        },1500);
+
+        var timeOut = 1500;
+
+        $('.boxes li.invisible').each( function (idx, li) {
+          timeOut += 750;
+          setTimeout(function () {
+            $(li).removeClass('invisible');
+            }, timeOut);
+          });
+      }));
+
+      $('.boxes li').click(function (event) {
+        $li =  $(event.currentTarget);
+        if ($(event.currentTarget).hasClass('active')) {
+          $li.removeClass();
+        } else {
+          $li.addClass('active');
+        }
+      });
+    </script>
+
+  </body>
+</html>

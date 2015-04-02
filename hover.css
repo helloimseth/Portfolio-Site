@@ -1,0 +1,105 @@
+html, body, section, article, button,
+ h1, h2, p, strong, em, a, ul, li {
+   margin: 0;
+   border: 0;
+   padding: 0;
+   outline: 0;
+   box-sizing: inherit;
+   font: inherit;
+   font-family: sans-serif;
+   text-decoration: inherit;
+   text-align: inherit;
+   color: inherit;
+   background: transparent;
+ }
+ ul, li {
+   list-style: none;
+ }
+
+ .group:after {
+   content: "";
+   clear: both;
+   display: block;
+ }
+
+ /**/
+
+ h1 {
+   font-size: 42px;
+   display: inline;
+   font-weight: bold;
+ }
+
+ .header {
+   margin: 25px auto;
+   text-align: center;
+ }
+
+.invisible {
+   opacity: 0;
+ }
+
+ * {
+   transition: opacity 175ms linear
+ }
+
+ .boxes {
+   width: 800px;
+   height: 370px;
+   margin: 10px auto;
+ }
+
+ .boxes li {
+   float: left;
+   width: 320px;
+   height: 320px;
+   padding: 20px;
+   margin: 5px 10px 10px;
+   background: #fafafa;
+   transition: height 175ms linear;
+
+ }
+
+ .boxes li:not(.links){
+   box-shadow: 0 0 5px #151515;
+   cursor: pointer;
+   border-radius: 3px;
+ }
+
+ .boxes li:not(.links):hover {
+
+ }
+
+ .boxes li h1 {
+   font-size: 42px;
+   transition: font-size 175ms linear;
+
+ }
+
+ .boxes li:not(.links):hover {
+   margin: 0 10px 15px;
+   box-shadow: 0 0 10px #151515;
+   height: 30px;
+   padding: 20px 20px 10px;
+   transition: height 175ms linear;
+ }
+
+ .boxes li.active:hover {
+   margin: 5px 10px 10px;
+ }
+
+ .boxes li:not(.links):hover h1 {
+   font-size: 24px;
+   transition: font-size 175ms linear;
+ }
+
+ .boxes li article {
+   height: 240px;
+   margin-top: 40px;
+   opacity: 0;
+   transition: opacity 25ms linear;
+ }
+
+ .boxes li:not(.links):hover article {
+   opacity: 1;
+ }
