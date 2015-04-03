@@ -3,11 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Hello, I'm Seth</title>
-    <link rel="stylesheet" type="text/css" href="assets/master.css">
-  </head>
+    <link rel="stylesheet" type="text/css" href="./assets/master.css">
+    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css'>
+    <script src="./assets/jquery-2.1.1.js"></script>
+    </head>
   <body>
 
-    <main class='container'>
+
+    <main class='container invisible'>
+      <section class='barnettnewman'>
+
+      </section>
+
       <header class='header'>
         <h1 id='hello' class='invisible'>Hello, </h1>
         <h1 id='im' class='invisible'>I'm </h1>
@@ -16,64 +24,160 @@
 
         <ul class='boxes group'>
           <li class='invisible'><h1>About</h1>
-            <article class="about-me">
-              Hello! I am a software engineer with experience in JavaScript,
-              Ruby, HTML/CSS, object-oriented programming and RESTful
-              architectures. I studied web development at New York
-              University before attending App Academy and am now looking to
-              continue developing my skills and to contribute to an engineering
-              team in NYC.
-              I have a background in art and performance, as well, and
-              in my spare time I enjoy working on my art practice and
-              also arguing about sports.
+            <article class="about-me group">
+              <p>
+                <img src="assets/profilepic.jpg" alt="A Picture Of Me" />
+
+                Hello! I am a software engineer with experience in JavaScript,
+                Ruby, HTML/CSS, object-oriented programming and RESTful
+                architectures. I studied web development at New York
+                University before attending App Academy and am now looking to
+                continue developing my skills and to contribute to an engineering
+                team in NYC.
+              </p>
+              <p>
+                I have a background in art and performance, as well, and
+                in my spare time I enjoy working on my art practice and
+                also arguing about sports.
+              </p>
             </article>
           </li>
-          <li class='invisible'><h1>Projects</h1>
-            <article class="">
+          <li class='invisible'>
+            <h1>Projects</h1>
+            <article class='group'>
+              <ul>
+                <li class="group">
+                  <a href="https://github.com/helloimseth/VillageBicycle" target="_blank">
+                    GitHub
+                  </a>
+                  <a href="http://village-bicycle.com" target="_blank">
+                    Live Link
+                  </a>
+                  <h3>Village Bicycle</h3>
+                  <p>
+                    Peer-to-peer bike renting app inspired by Spinlister
+                    and AirBnB built on a Ruby on Rails API with a Backbone.js front-end
+                  </p>
+
+                </li>
+                <li class="group">
+                  <a href="https://github.com/helloimseth/everybody_conga_line" target="_blank">
+                    GitHub
+                  </a>
+                  <a href="http://helloimseth.com/conga" target="_blank">
+                    Live Link
+                  </a>
+                  <h3>EVERYBODY<h3>
+                  <h3>CONGA LINE</h3>
+                  <p>
+                    Browser game written in JavaScript and JQuery based
+                    on the classic Snake game
+                  </p>
+
+                </li>
+                <li class="group">
+                  <a href="https://github.com/helloimseth/activerecordlite" target="_blank">
+                    GitHub
+                  </a>
+                  <h3>ActiveRecordLite  </h3>
+                  <p>
+                    Custom built ORM for Ruby replicating ActiveRecord’s functionality
+                  </p>
+
+                </li>
+              </ul>
             </article>
           </li>
         </ul>
 
         <ul class='boxes group'>
-          <li class='invisible'><h1>Resume</h1>
-            <article class="">
+          <li class='invisible'>
+            <h1>Resume</h1>
+            <article class="group">
+              <h3>Education and Experience</h3>
+              <p>
+                For my complete professional and education experience, you can
+                download my
+                <a href="./assets/Resume-SethHamlin.pdf" target='_blank'>resume (PDF)</a>
+                or connect with me on
+                <a href="http://www.linkedin.com/in/sethhamlin" target='_blank'>LinkedIn</a>
+              </p>
+
+              <h3>Languages and Technologies</h3>
+              <p>
+                Ruby, Javascript, HTML, CSS, Ruby on Rails, Backbone.js, jQuery,
+                SQL, RSpec,  git, PHP, XML, Java, Adobe Creative Cloud, Arduino,
+                Filemaker Pro
+              </p>
+              <p class='group'>
+                <img class='icon' src="assets/ruby.png" alt="" />
+                <img class='icon' src="assets/rails.png" alt="" />
+                <img class='icon' src="assets/htmlcss.png" alt="" />
+                <img class='icon' src="assets/js.png" alt="" />
+                <img class='icon' src="assets/pgsql.png" alt="" />
+                <img class='icon' src="assets/cc.jpg" alt="" />
+              </p>
             </article>
           </li>
-          <li class='links invisible'>Links</li>
+          <li class='links invisible'>
+            <a href="https://github.com/helloimseth">
+              <i class="fa fa-github-alt fa-5x"></i>
+            </a>
+            <a href="www.linkedin.com/in/sethhamlin">
+              <i class="fa fa-linkedin-square fa-5x"></i>
+            </a>
+            <a href="mailto:helloimseth@gmail.com">
+              <i class="fa fa-envelope fa-5x"></i>
+            </a>
+          </li>
         </ul>
-
+        <figure>
+          <img class='invisible' src="assets/logo.gif" alt="" />
+        </figure>
+        <p class='credit'>
+          Designed by Seth Hamlin
+        </p>
     </main>
 
-    <script src="./assets/jquery-2.1.1.js"></script>
     <script charset="utf-8">
-
-      ($(document).ready(function () {
-          $('#hello').removeClass();
+      $(function () {
         setTimeout(function () {
-          $('#im').removeClass();
+          $('main.container').removeClass('invisible');
+          $('main.container img').removeClass('invisible');
+        }, 350);
+        setTimeout(function () {
+          $('#hello').removeClass();
         },750);
         setTimeout(function () {
+          $('#im').removeClass();
+        },1250);
+        setTimeout(function () {
           $('#seth').removeClass();
-        },1500);
+        },1750);
 
-        var timeOut = 1500;
+        var timeOut = 1750;
 
         $('.boxes li.invisible').each( function (idx, li) {
-          timeOut += 750;
+          timeOut += 400;
           setTimeout(function () {
             $(li).removeClass('invisible');
             }, timeOut);
           });
-      }));
+      });
 
       $('.boxes li').click(function (event) {
-        $li =  $(event.currentTarget);
-        if ($(event.currentTarget).hasClass('active')) {
-          $li.removeClass();
-        } else {
-          $li.addClass('active');
+        if (!$(event.currentTarget).hasClass('open')) {
+          event.preventDefault();
+          $(event.currentTarget).addClass('open');
         }
+
+        $('.open h1').click(function (event) {
+          event.stopPropagation();
+          $(event.currentTarget).parent().removeClass('open');
+        });
       });
+
+
     </script>
 
   </body>

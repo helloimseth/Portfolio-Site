@@ -1,12 +1,12 @@
 html, body, section, article, button,
- h1, h2, p, strong, em, a, ul, li {
+ h1, h2, h3, p, strong, em, a, ul, li {
    margin: 0;
    border: 0;
    padding: 0;
    outline: 0;
    box-sizing: inherit;
    font: inherit;
-   font-family: sans-serif;
+   font-family: 'Lato', sans-serif;
    text-decoration: inherit;
    text-align: inherit;
    color: inherit;
@@ -22,16 +22,45 @@ html, body, section, article, button,
    display: block;
  }
 
+ body {
+   background: #FFDDAA;
+ }
+
+ .barnettnewman {
+   position: absolute;
+   width: 10px;
+   left: 100px;
+   top: -10px;
+   bottom: -20px;
+   background: transparent;
+   border-left: 50px solid #5598FF;
+   border-right: 50px solid #5598FF;
+   z-index: -2;
+ }
+
  /**/
 
+.container {
+  position: relative;
+  width: 900px;
+  margin: auto;
+}
+
+.container img {
+  width: 100px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
  h1 {
-   font-size: 42px;
+   font-size: 66px;
    display: inline;
    font-weight: bold;
  }
 
  .header {
-   margin: 25px auto;
+   margin: 5px auto 5px;
    text-align: center;
  }
 
@@ -49,7 +78,9 @@ html, body, section, article, button,
    margin: 10px auto;
  }
 
- .boxes li {
+ /*Click Open*/
+
+ .boxes > li {
    float: left;
    width: 320px;
    height: 320px;
@@ -57,48 +88,176 @@ html, body, section, article, button,
    margin: 5px 10px 10px;
    background: #fafafa;
    transition: height 175ms linear;
-
  }
 
- .boxes li:not(.links){
-   box-shadow: 0 0 5px #151515;
+ .boxes > li:not(.links){
    cursor: pointer;
-   border-radius: 3px;
+   box-shadow: 0 0 2px #151515;
+   background: #2a4c80;
+   color: white;
+   border-radius: 1px;
  }
 
- .boxes li:not(.links):hover {
+ .boxes > li:not(.links):hover {
    margin: 0 10px 15px;
-   box-shadow: 0 0 10px #151515;
+   box-shadow: 0 0 4px #151515;
  }
 
- .boxes li h1 {
+ .boxes > li h1 {
    font-size: 42px;
    transition: font-size 175ms linear;
 
  }
 
- .boxes li.active {
-   height: 30px;
+ .boxes > li.open {
+   height: 20px;
    padding: 20px 20px 10px;
    transition: height 175ms linear;
  }
 
- .boxes li.active:hover {
+ .boxes > li.open:hover {
    margin: 5px 10px 10px;
  }
 
- .boxes li.active h1 {
+ .boxes > li.open h1 {
    font-size: 24px;
    transition: font-size 175ms linear;
  }
 
- .boxes li article {
-   height: 240px;
-   margin-top: 40px;
+ .boxes > li article {
+   color: #151515;
+   padding: 10px;
    opacity: 0;
-   transition: opacity 25ms linear;
+   transition: opacity 0ms linear;
+   cursor: default;
+   margin-top: -25px;
+   background: #eaeaea;
+   border-radius: 1px;
+   box-shadow: 0 1px 4px #8f8f8f;
  }
 
- .boxes li.active article {
+ .boxes > li.open article {
    opacity: 1;
+   transition: opacity 400ms linear;
  }
+
+/*CONTENT*/
+
+.boxes li.open h1 {
+  position: relative;
+  left: -20px;
+  top: -30px;
+  padding: 20px;
+  width: 320px;
+  display: block;
+}
+
+.boxes li article img {
+  border-radius: 50%;
+  width: 100px;
+  float: right;
+  margin: 0 10px 10px 0;
+}
+
+.boxes li article p {
+  margin-bottom: 10px;
+}
+
+.boxes li article li {
+  margin-bottom: 5px;
+  background: #5598FF;
+  color: white;
+  padding: 10px 10px 1px;
+  border-radius: 5px;
+}
+
+.boxes li article h3 {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.boxes li article li p {
+  margin-top: 5px;
+}
+
+.boxes li article li a {
+  float: right;
+  background: #fff;
+  color: #151515;
+  padding: 3px 5px 0;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.boxes li article li a:hover {
+  background: #151515;
+  color: #fff;
+}
+
+.boxes li article li a:active {
+  font-weight: bold;
+  padding: 3px 3px 0;
+}
+
+.boxes li article li a:first-of-type {
+  margin-left: 10px;
+}
+
+.boxes li article p > a {
+  color: #5598FF;
+}
+
+.boxes li article p > a:hover {
+  color: #2a4c80;
+
+}
+
+.boxes li article p > a:active {
+  font-weight: bold;
+}
+
+.boxes li article p img.icon {
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 0;
+  height: 35px;
+  width: auto;
+  float: left;
+}
+
+.boxes li.links {
+  position: relative;
+  background: transparent;
+}
+
+.boxes li.links a {
+  color: #5598FF;
+  position: absolute;
+  pointer: cursor;
+  right: 0;
+  bottom: 60px;
+  display: block;
+  width: 40px;
+  margin: 0 40px 35px 20px;
+}
+
+.boxes li.links a:first-of-type {
+  bottom: -20px;
+}
+
+.boxes li.links a:last-of-type {
+  right: 100px;
+  bottom: -20px;
+}
+
+.boxes li.links i:hover {
+  color: #2a4c80;
+}
+
+.credit {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  font-size: 12px;
+}
