@@ -23,15 +23,15 @@ html, body, section, article, button,
  }
 
  body {
+   display: block;
    background: #FFDDAA;
  }
 
  .barnettnewman {
    position: absolute;
+   height: 100%;
    width: 10px;
    left: 100px;
-   top: -10px;
-   bottom: -20px;
    background: transparent;
    border-left: 50px solid #5598FF;
    border-right: 50px solid #5598FF;
@@ -41,22 +41,27 @@ html, body, section, article, button,
  /**/
 
 .container {
-  position: relative;
+  position: absolute;
   width: 900px;
-  margin: auto;
+  left: calc(50% - 450px);
+  height: 100%
 }
 
 .container img {
-  width: 100px;
+  width: 75px;
   height: auto;
-  margin: auto;
+  margin: auto 115px auto auto;
+  float: right;
   display: block;
+}
+
+h1, h2, h3 {
+  font-family: 'Stint Ultra Expanded', cursive;
 }
 
  h1 {
    font-size: 66px;
    display: inline;
-   font-weight: bold;
  }
 
  .header {
@@ -88,6 +93,7 @@ html, body, section, article, button,
    margin: 5px 10px 10px;
    background: #fafafa;
    transition: height 175ms linear;
+
  }
 
  .boxes > li:not(.links){
@@ -96,6 +102,8 @@ html, body, section, article, button,
    background: #2a4c80;
    color: white;
    border-radius: 1px;
+   border-radius: 20px;
+
  }
 
  .boxes > li:not(.links):hover {
@@ -130,10 +138,11 @@ html, body, section, article, button,
    opacity: 0;
    transition: opacity 0ms linear;
    cursor: default;
-   margin-top: -25px;
+   margin-top: -43px;
    background: #eaeaea;
    border-radius: 1px;
-   box-shadow: 0 1px 4px #8f8f8f;
+   box-shadow: 0 -1px 4px #8f8f8f;
+   border-radius: 4px 4px 0 0;
  }
 
  .boxes > li.open article {
@@ -168,7 +177,7 @@ html, body, section, article, button,
   background: #5598FF;
   color: white;
   padding: 10px 10px 1px;
-  border-radius: 5px;
+  /*border-radius: 0px;*/
 }
 
 .boxes li article h3 {
